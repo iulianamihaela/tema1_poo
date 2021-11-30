@@ -68,4 +68,43 @@ public class Database {
 	public void addSerials(Show show) {
 		this.shows.add(show);
 	}
+
+	public User getUserByUsername(String username) {
+		User user = null;
+
+		for (User u : this.users) {
+			if (u.getUsername().equals(username)) {
+				user = u;
+				break;
+			}
+		}
+
+		return user;
+	}
+
+	public Movie getMovieByTitle(String title) {
+		Movie movie = null;
+
+		for (Movie m : this.movies) {
+			if (m.getTitle().equals(title)) {
+				movie = m;
+				break;
+			}
+		}
+
+		return movie;
+	}
+
+	public Show getShowByTitle(String title) {
+		Show show = null;
+
+		for (Show s : this.shows) {
+			if (s.getTitle().equals(title)) {
+				show = s;
+				break;
+			}
+		}
+
+		return show;
+	}
 }

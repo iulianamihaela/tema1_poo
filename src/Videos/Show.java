@@ -30,4 +30,8 @@ public class Show extends Video {
 	public void setSeasons(ArrayList<Season> seasons) {
 		this.seasons = seasons;
 	}
+
+	public void addRating(Integer season, Double rating) {
+		this.seasons.get(season - 1).getRatings().add(rating);
+	}
 }

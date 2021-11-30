@@ -96,6 +96,8 @@ public final class Main {
             videosDB.getActions().add(new Action(actionInputData));
         }
 
+        arrayResult = videosDB.executeActions(fileWriter);
+
         fileWriter.closeJSON(arrayResult);
     }
 }

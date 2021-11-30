@@ -123,4 +123,12 @@ public final class Utils {
 
         return mapVideos;
     }
+
+    public static String Success(String msg) {
+        return "success -> " + msg;
+    }
+
+    public static String Error(String msg) {
+        return "error -> " + msg;
+    }
 }
