@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public abstract class ShowInput {
     /**
-     * Show's title
+     * Videos.Show's title
      */
     private final String title;
     /**
@@ -17,11 +17,11 @@ public abstract class ShowInput {
      */
     private final int year;
     /**
-     * Show casting
+     * Videos.Show casting
      */
     private final ArrayList<String> cast;
     /**
-     * Show genres
+     * Videos.Show genres
      */
     private final ArrayList<String> genres;
 

@@ -1,11 +1,14 @@
 package main;
 
+import Users.User;
+import Videos.Movie;
+import Videos.Show;
+import actor.Actor;
 import checker.Checkstyle;
 import checker.Checker;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import common.Constants;
-import fileio.Input;
-import fileio.InputLoader;
-import fileio.Writer;
+import fileio.*;
 import org.json.simple.JSONArray;
 
 import java.io.File;
@@ -71,6 +74,27 @@ public final class Main {
         JSONArray arrayResult = new JSONArray();
 
         //TODO add here the entry point to your implementation
+        VideosDB videosDB = new VideosDB();
+
+        for (ActorInputData actorInputData : input.getActors()) {
+            videosDB.getDatabase().addActor(new Actor(actorInputData));
+        }
+
+        for (UserInputData userInputData : input.getUsers()) {
+            videosDB.getDatabase().addUsers(new User(userInputData));
+        }
+
+        for (MovieInputData movieInputData : input.getMovies()) {
+            videosDB.getDatabase().addMovies(new Movie(movieInputData));
+        }
+
+        for (SerialInputData serialInputData : input.getSerials()) {
+            videosDB.getDatabase().addSerials(new Show(serialInputData));
+        }
+
+        for (ActionInputData actionInputData : input.getCommands()) {
+            videosDB.getActions().add(new Action(actionInputData));
+        }
 
         fileWriter.closeJSON(arrayResult);
     }

@@ -15,7 +15,7 @@ public final class SerialInputData extends ShowInput {
      */
     private final int numberOfSeasons;
     /**
-     * Season list
+     * Videos.Season list
      */
     private final ArrayList<Season> seasons;
 

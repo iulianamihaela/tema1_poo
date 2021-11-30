@@ -22,7 +22,7 @@ We provide the input tests, the logic that parses them and the checker that runs
         * you can add here your actor related classes
    * entertainment
         * contains an enum for the supported video genres - do not modify it
-        * class for representing a Season of a tv show - do not modify it
+        * class for representing a Videos.Season of a tv show - do not modify it
         * you can add here your entertainment related classes
 
 We encourage you to organize your implementation in packages based on the functionality their classes offer. Try to keep

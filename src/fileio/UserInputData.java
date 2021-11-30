@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public final class UserInputData {
     /**
-     * User's username
+     * Users.User's username
      */
     private final String username;
     /**

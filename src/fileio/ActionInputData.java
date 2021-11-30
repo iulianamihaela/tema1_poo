@@ -39,11 +39,11 @@ public final class ActionInputData {
      */
     private final String criteria;
     /**
-     * Video title
+     * Users.User.Video title
      */
     private final String title;
     /**
-     * Video genre
+     * Users.User.Video genre
      */
     private final String genre;
     /**
@@ -55,7 +55,7 @@ public final class ActionInputData {
      */
     private final double grade;
     /**
-     * Season number
+     * Videos.Season number
      */
     private final int seasonNumber;
     /**
