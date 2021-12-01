@@ -1,110 +1,158 @@
 package main;
 
-import Users.User;
-import Videos.Movie;
-import Videos.Show;
+import users.User;
+import videos.Movie;
+import videos.Show;
 import actor.Actor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
-	private ArrayList<Actor> actors;
-	private ArrayList<Movie> movies;
-	private ArrayList<Show> shows;
-	private ArrayList<User> users;
+    private ArrayList<Actor> actors;
+    private ArrayList<Movie> movies;
+    private ArrayList<Show> shows;
+    private ArrayList<User> users;
 
-	public Database() {
-		this.actors = new ArrayList<>();
-		this.movies = new ArrayList<>();
-		this.shows = new ArrayList<>();
-		this.users = new ArrayList<>();
-	}
+    public Database() {
+        this.actors = new ArrayList<>();
+        this.movies = new ArrayList<>();
+        this.shows = new ArrayList<>();
+        this.users = new ArrayList<>();
+    }
 
-	public List<Actor> getActors() {
-		return actors;
-	}
+    /**
+     * @return lista de actori
+     */
+    public List<Actor> getActors() {
+        return actors;
+    }
 
-	public void setActors(ArrayList<Actor> actors) {
-		this.actors = actors;
-	}
+    /**
+     * @param actors lista de actori
+     */
+    public void setActors(final ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
 
-	public List<Movie> getMovies() {
-		return movies;
-	}
+    /**
+     * @return lista de filme
+     */
+    public List<Movie> getMovies() {
+        return movies;
+    }
 
-	public void setMovies(ArrayList<Movie> movies) {
-		this.movies = movies;
-	}
+    /**
+     * @param movies lista de filme
+     */
+    public void setMovies(final ArrayList<Movie> movies) {
+        this.movies = movies;
+    }
 
-	public List<Show> getShows() {
-		return shows;
-	}
+    /**
+     * @return lista de seriale
+     */
+    public List<Show> getShows() {
+        return shows;
+    }
 
-	public void setShows(ArrayList<Show> shows) {
-		this.shows = shows;
-	}
+    /**
+     * @param shows lista de seriale
+     */
+    public void setShows(final ArrayList<Show> shows) {
+        this.shows = shows;
+    }
 
-	public List<User> getUsers() {
-		return users;
-	}
+    /**
+     * @return lista de utilizatori
+     */
+    public List<User> getUsers() {
+        return users;
+    }
 
-	public void setUsers(ArrayList<User> users) {
-		this.users = users;
-	}
+    /**
+     * @param users lista de utilizatori
+     */
+    public void setUsers(final ArrayList<User> users) {
+        this.users = users;
+    }
 
-	public void addActor(Actor actor) {
-		this.actors.add(actor);
-	}
+    /**
+     * @param actor actorul spre a fi adaugat
+     */
+    public void addActor(final Actor actor) {
+        this.actors.add(actor);
+    }
 
-	public void addUsers(User user) {
-		this.users.add(user);
-	}
+    /**
+     * @param user utilizatorul spre a fi adaugat
+     */
+    public void addUser(final User user) {
+        this.users.add(user);
+    }
 
-	public void addMovies(Movie movie) {
-		this.movies.add(movie);
-	}
+    /**
+     * @param movie filmul spre a fi adaugat
+     */
+    public void addMovie(final Movie movie) {
+        this.movies.add(movie);
+    }
 
-	public void addSerials(Show show) {
-		this.shows.add(show);
-	}
+    /**
+     * @param show serialul spre a fi adaugat
+     */
+    public void addSerial(final Show show) {
+        this.shows.add(show);
+    }
 
-	public User getUserByUsername(String username) {
-		User user = null;
+    /**
+     * @param username nume de utilizator
+     * @return utiliziator
+     */
+    public User getUserByUsername(final String username) {
+        User user = null;
 
-		for (User u : this.users) {
-			if (u.getUsername().equals(username)) {
-				user = u;
-				break;
-			}
-		}
+        for (User u : this.users) {
+            if (u.getUsername().equals(username)) {
+                user = u;
+                break;
+            }
+        }
 
-		return user;
-	}
+        return user;
+    }
 
-	public Movie getMovieByTitle(String title) {
-		Movie movie = null;
+    /**
+     * @param title numele filmului
+     * @return filmul
+     */
+    public Movie getMovieByTitle(final String title) {
+        Movie movie = null;
 
-		for (Movie m : this.movies) {
-			if (m.getTitle().equals(title)) {
-				movie = m;
-				break;
-			}
-		}
+        for (Movie m : this.movies) {
+            if (m.getTitle().equals(title)) {
+                movie = m;
+                break;
+            }
+        }
 
-		return movie;
-	}
+        return movie;
+    }
 
-	public Show getShowByTitle(String title) {
-		Show show = null;
+    /**
+     * @param title numele serialului
+     * @return serialul
+     */
+    public Show getShowByTitle(final String title) {
+        Show show = null;
 
-		for (Show s : this.shows) {
-			if (s.getTitle().equals(title)) {
-				show = s;
-				break;
-			}
-		}
+        for (Show s : this.shows) {
+            if (s.getTitle().equals(title)) {
+                show = s;
+                break;
+            }
+        }
 
-		return show;
-	}
+        return show;
+    }
 }

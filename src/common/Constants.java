@@ -93,4 +93,10 @@ public final class Constants {
     public static final String POPULAR = "popular";
 
     public static final String PREMIUM = "PREMIUM";
+
+    public static final Integer YEAR_FILTER_INDEX = 0;
+    public static final Integer GENRE_FILTER_INDEX = 1;
+    public static final Integer WORDS_FILTER_INDEX = 2;
+    public static final Integer AWARDS_FILTER_INDEX = 3;
+
 }

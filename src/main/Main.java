@@ -1,15 +1,23 @@
 package main;
 
-import Users.User;
-import Videos.Movie;
-import Videos.Show;
+import users.User;
+import videos.Movie;
+import videos.Show;
 import actor.Actor;
 import checker.Checkstyle;
 import checker.Checker;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import common.Constants;
-import fileio.*;
+
 import org.json.simple.JSONArray;
+
+import fileio.Writer;
+import fileio.Input;
+import fileio.InputLoader;
+import fileio.ActionInputData;
+import fileio.SerialInputData;
+import fileio.MovieInputData;
+import fileio.UserInputData;
+import fileio.ActorInputData;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,15 +89,15 @@ public final class Main {
         }
 
         for (UserInputData userInputData : input.getUsers()) {
-            videosDB.getDatabase().addUsers(new User(userInputData));
+            videosDB.getDatabase().addUser(new User(userInputData));
         }
 
         for (MovieInputData movieInputData : input.getMovies()) {
-            videosDB.getDatabase().addMovies(new Movie(movieInputData));
+            videosDB.getDatabase().addMovie(new Movie(movieInputData));
         }
 
         for (SerialInputData serialInputData : input.getSerials()) {
-            videosDB.getDatabase().addSerials(new Show(serialInputData));
+            videosDB.getDatabase().addSerial(new Show(serialInputData));
         }
 
         for (ActionInputData actionInputData : input.getCommands()) {

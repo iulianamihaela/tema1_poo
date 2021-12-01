@@ -124,11 +124,19 @@ public final class Utils {
         return mapVideos;
     }
 
-    public static String Success(String msg) {
+    /**
+     * @param msg mesajul de success
+     * @return output-ul pentru jsonObject
+     */
+    public static String success(final String msg) {
         return "success -> " + msg;
     }
 
-    public static String Error(String msg) {
+    /**
+     * @param msg mesajul de eroare
+     * @return output-ul pentru jsonObject
+     */
+    public static String error(final String msg) {
         return "error -> " + msg;
     }
 }
