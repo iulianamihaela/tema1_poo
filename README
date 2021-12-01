@@ -1,38 +1,40 @@
-Object Oriented Programming Course
-Homework - VideosDB
+Tema 1 POO - VideosDB
+Pana Mihaela Iuliana, 336CA
 
-November 2021
+Implementarea temei se concentreaza in clasa VideosDB, clasa ce inglobeaza baza
+de date (ce contine filmele, serialele, actorii si utilizatorii), actiunile,
+cat si metodele de executie ale actiunilor.
 
-# Info
-https://ocw.cs.pub.ro/courses/poo-ca-cd/teme/tema
+Pentru modelarea obiectelor am creat clasele Actor, Movie, Show, Video, User,
+Action, ce au la baza proprietatile oferite de clasele InputData din pachetul
+fileio oferite in schelet. Pnetru modalitatea de construire, acestea primesc
+ca si input clasa corespondenta ce contine datele de intrare si copiaza
+valorile proprietatilor acestora.
 
-# About the code
+Pentru executarea actiunilor am creat metoda executeAction care, in functie de
+tipul actiunii, obiectul asupra careia aceasta se efectueaza, cat si filtre,
+apeleaza metoda corespunzatoare fiecarui tip de query, comanda sau recomandare.
+In vederea sortarii am folosit clasa Comparator, bazandu-ne astfel pe rezultate
+ale metodelor din obiectele ce se doresc a fi sortate (getRating, getTitle,
+getName).
 
-We provide the input tests, the logic that parses them and the checker that runs them.
+Pentru pastrea rating-urilor in cadrul filmelor am folosit un hashmap bazat pe
+perechi "username - rating", iar in cadrul sezoanelor acestea au fost pastrate
+sub forma unei liste de hashmap-uri, unde fiecare element reprezinta
+rating-urile fiecarui sezon sub aceeasi forma "username - rating" mentionata
+anterior.
 
-* test_db - contains the tests in JSON format
-* src
-   * checker - the checker's sources including the checkstyle necessary files, not to be modified
-   * fileio - classes for parsing the input files, not to be modified
-   * common, utils
-        * contain utility classes with constants and static methods
-        * you can add your own functionality in the existing classes or add new classes as well
-   * actor
-        * contains an enum for the types of awards an actor can have - do not modify it
-        * you can add here your actor related classes
-   * entertainment
-        * contains an enum for the supported video genres - do not modify it
-        * class for representing a videos.Season of a tv show - do not modify it
-        * you can add here your entertainment related classes
+Pentru obtinerea output-urilor am folosit doua metode utilitare "success" si
+"error", care pe baza parametrului primit construiesc mesajul rezultat in
+obiectul json final ("error -> mesaj" si "success -> mesaj").
 
-We encourage you to organize your implementation in packages based on the functionality their classes offer. Try to keep
-your code modular, readable and documented.
+Popularitatea genurilor si cele mai vizionate video-uri au fost obtinute prin
+constructia unui hashmap cu perechile "gen: numar_vizionari" si
+"video: numar_vizionari", din care au fost ulterior pastrate cheile sortate
+dupa valoarea retinuta la acestea.
 
-# Testing
-
-The Main class runs the checker on your implementation. Add the entry point to your implementation in it.
-
-Run Main to test your implementation from the IDE or from command line.
-
-Run the main method from Test class with the name of the input file from the command line and the result will be written
-to the out.txt file. Thus, you can compare this result with ref.
+Funcia getFilteredVideos returneaza lista de video-uri (filme si seriale)
+obtinuta dupa aplicarea filtrelor primite ca parametru. Totodata,
+proprietatile onMovies si onShows sunt indicatoare ce marcheaza daca trebuie
+incluse filmele sau serialele (pentru a include toate video-urile, si onMovies
+si onShows trebuie sa fie setate la true).
