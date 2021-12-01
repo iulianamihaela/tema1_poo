@@ -20,10 +20,6 @@ public class Video {
 		return title;
 	}
 
-	public Integer getRelease_year() {
-		return year;
-	}
-
 	public ArrayList<String> getGenres() {
 		return genres;
 	}
@@ -32,11 +28,31 @@ public class Video {
 		this.title = title;
 	}
 
-	public void setRelease_year(Integer release_year) {
-		this.year = release_year;
-	}
-
 	public void setGenres(ArrayList<String> genres) {
 		this.genres = genres;
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public ArrayList<String> getCast() {
+		return cast;
+	}
+
+	public void setCast(ArrayList<String> cast) {
+		this.cast = cast;
+	}
+
+	public double getRating() {
+		return 0;
+	};
+
+	public int getDuration() {
+		return 0;
 	}
 }

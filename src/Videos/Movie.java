@@ -26,4 +26,24 @@ public class Movie extends Video {
 	public void addRating(String username, Double rating) {
 		this.ratings.put(username, rating);
 	}
+
+	@Override
+	public double getRating() {
+		if (this.ratings.size() == 0) {
+			return 0;
+		}
+
+		double sum = 0;
+
+		for (Double x : this.ratings.values()) {
+			sum += x;
+		}
+
+		return sum / this.ratings.size();
+	}
+
+	@Override
+	public int getDuration() {
+		return this.duration;
+	}
 }

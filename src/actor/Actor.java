@@ -11,6 +11,8 @@ public class Actor {
 	private ArrayList<String> filmography;
 	private Map<ActorsAwards, Integer> awards;
 
+	private double rating;
+
 	public Actor(ActorInputData actorInputData) {
 		this.name = actorInputData.getName();
 		this.careerDescription = actorInputData.getCareerDescription();
@@ -40,5 +42,31 @@ public class Actor {
 
 	public void setFilmography(ArrayList<String> filmography) {
 		this.filmography = filmography;
+	}
+
+	public Map<ActorsAwards, Integer> getAwards() {
+		return awards;
+	}
+
+	public void setAwards(Map<ActorsAwards, Integer> awards) {
+		this.awards = awards;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
+	public int getNumberOfAwards() {
+		int total = 0;
+
+		for (Integer count : this.awards.values()) {
+			total += count;
+		}
+
+		return total;
 	}
 }
